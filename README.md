@@ -29,7 +29,7 @@ In the latest `feature/onboarding` branch, I implemented a fully custom onboardi
 ## 🎬 Interaction Demo
 
 <p align="center">
-  <img src="./assets/screenshots/onboarding-demo.mp4" width="300" alt="Onboarding Demo">
+  <img src="./assets/screenshots/demo.mp4" width="300" alt="Onboarding Demo">
 </p>
 
 ## 🏗️ Project Structure (Onboarding Related)
