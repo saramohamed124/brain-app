@@ -1,50 +1,45 @@
-# Welcome to your Expo app 👋
+# 🧠 Brain Game - Interactive Onboarding Experience 🎮
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the **Brain Game** mobile application! This project is a high-performance educational game built with **React Native** and **Expo**, focusing on a premium user experience and smooth interactive elements.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Recent Feature: Interactive Onboarding
+In the latest `feature/onboarding` branch, I implemented a fully custom onboarding experience that bridges the gap between design and functionality, ensuring a high-quality "First Time User Experience" (FTUE).
 
-   ```bash
-   npm install
-   ```
+### ✨ Key Implementation Details:
+* **3D UI Components:** Custom-built navigation buttons with a 3D tactile effect using `react-native-svg`.
+* **SVG Integration:** Seamlessly integrated complex assets from Figma using `react-native-svg-transformer` for crisp, scalable graphics.
+* **Audio Interaction:** Added satisfying click sound effects using `expo-audio` to enhance user engagement and game-feel.
+* **Smooth Navigation:** Integrated with `expo-router` for declarative routing between onboarding slides.
+* **Responsive Layout:** Leveraged **NativeWind (Tailwind CSS)** to ensure the UI is consistent across different screen sizes.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Technical Stack
+* **Framework:** [Expo](https://expo.dev/) (SDK 54)
+* **Styling:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native)
+* **Graphics:** SVG Assets with custom Transformer
+* **State Management:** Redux Toolkit
+* **Storage:** AsyncStorage (for onboarding persistence)
+* **Typography:** Almarai (via Expo Google Fonts)
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🎬 Interaction Demo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<p align="center">
+  <img src="./assets/screenshots/onboarding-demo.mp4" width="300" alt="Onboarding Demo">
+</p>
 
-## Get a fresh project
-
-When you're ready, run:
-
+## 🏗️ Project Structure (Onboarding Related)
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+src/
+├── components/
+│   └── onboarding/
+│       └── OnboardingItem.tsx  # Main slide component & 3D logic
+├── hooks/
+│   └── use-sound.ts            # Custom hook for optimized audio effects
+assets/
+├── icons/                      # SVG assets exported from Figma
+└── sounds/                     # Interactive game sound effects (wav/mp3)
