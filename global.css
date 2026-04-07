@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --font-almarai: Almarai-Regular;
+    --font-almarai-bold: Almarai-Bold;
+  }
+  Text {
+    font-family: "AlmaraiRegular";
+  }
+}
+
+.font-almarai {
+  font-family: "AlmaraiRegular";
+}
+
+.font-almarai-bold {
+  font-family: "AlmaraiBold";
+}
