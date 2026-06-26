@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
 import { Href, router } from "expo-router";
+import React from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 
 // Asset Imports
-import StarGoldIcon from "@/assets/icons/star_gold.svg";
 import LeftArrow from "@/assets/icons/left_arrow.svg";
+import StarGoldIcon from "@/assets/icons/star_gold.svg";
 import { useClickSound } from "@/src/hooks/use-sound";
 
 // ==========================================
