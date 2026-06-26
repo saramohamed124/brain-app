@@ -1,12 +1,12 @@
-import { ONBOARDING_DATA } from "@/src/constants/onboarding";
+import { ONBOARDING_DATA } from "../../src/constants/onboarding";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Href, useRouter } from "expo-router";
 import React, { useRef, useState } from "react";
 import { Animated, FlatList, Image, View } from "react-native";
 import OnboardingItem from "../../src/components/onboarding/OnboardingItem";
 export const Images = {
-  puzzleYellow: require("@/assets/images/background/puzzle_yellow.png"),
-  puzzleBlue: require("@/assets/images/background/puzzle_blue.png"),
+  puzzleYellow: require("../../assets/images/background/puzzle_yellow.png"),
+  puzzleBlue: require("../../assets/images/background/puzzle_blue.png"),
 };
 export default function OnboardingScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);

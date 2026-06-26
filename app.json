@@ -38,7 +38,11 @@
           "image": "./assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#0B98D8"
+          "backgroundColor": "#0B98D8",
+          "dark": {
+            "image": "./assets/images/logo.png",
+            "backgroundColor": "#0B98D8"
+          }
         }
       ],
       "expo-localization",

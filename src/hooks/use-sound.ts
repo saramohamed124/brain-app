@@ -1,24 +1,19 @@
-import { Audio } from 'expo-av';
-import { useEffect, useState } from 'react';
+import { createAudioPlayer } from 'expo-audio';
+
+// Load and compile the asset at file layout level so it maps natively
+const clickAsset = require('../../assets/sounds/clicks.wav');
 
 export const useClickSound = () => {
-    const [sound, setSound] = useState<Audio.Sound | null>(null);
+    // Instantiate the player globally within this hook scope
+    const player = createAudioPlayer(clickAsset);
 
-    async function playSound() {
-        const { sound } = await Audio.Sound.createAsync(
-            require('../../assets/sounds/clicks.wav')
-        );
-        setSound(sound);
-        await sound.playAsync();
+    function playSound() {
+        if (player) {
+            // If tapped in quick succession, rewind to the start
+            player.seekTo(0);
+            player.play();
+        }
     }
-
-    useEffect(() => {
-        return sound
-            ? () => {
-                sound.unloadAsync();
-            }
-            : undefined;
-    }, [sound]);
 
     return playSound;
 };

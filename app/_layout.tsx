@@ -1,4 +1,4 @@
-import { store } from "@/src/store";
+import { store } from "../src/store";
 import {
   Almarai_300Light,
   Almarai_400Regular,
