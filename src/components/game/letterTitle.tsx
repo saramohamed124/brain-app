@@ -41,7 +41,7 @@ export default function LetterTitle() {
       {/* Stars Score Section */}
       <View className={styles.scoreWrapper}>
         <StarGoldIcon width={24} height={24} />
-        <Text className={styles.scoreText}>2</Text>
+        <Text className={styles.scoreText}>0</Text>
       </View>
 
       {/* Main Page Header */}
