@@ -3,7 +3,6 @@ import { useLocalSearchParams } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function GameScreen() {
-  // بنجيب الـ id اللي هو رقم المستوى من الـ URL
   const { id } = useLocalSearchParams();
 
   return (

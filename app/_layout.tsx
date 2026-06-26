@@ -17,7 +17,7 @@ import { View } from "react-native";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [isFirstTime, setIsFirstTime] = useState<boolean | null>(null);
+  const [isFirstTime, setIsFirstTime] = useState<boolean | null>(true);
   const [loaded, error] = useFonts({
     AlmaraiLight: Almarai_300Light,
     AlmaraiRegular: Almarai_400Regular,
