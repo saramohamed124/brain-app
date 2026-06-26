@@ -13,7 +13,7 @@ import { useClickSound } from "@/src/hooks/use-sound";
 const styles = {
   // Uses fluid spacings and semantic background/border theme variables
   headerContainer:
-    "bg-brand-surface mt-fluid-header-mt py-fluid-header-py px-fluid-header-px flex flex-row-reverse border-b border-brand-line items-center justify-between",
+    "bg-game-bgGrayHeader mt-fluid-header-mt py-fluid-header-py px-fluid-header-px flex flex-row border-b border-game-lockedBorder items-center justify-between",
 
   // Score Section with fluid gap
   scoreWrapper: "flex flex-row items-center justify-center gap-fluid-gap-xs",
@@ -40,8 +40,8 @@ export default function LetterTitle() {
     <View className={styles.headerContainer}>
       {/* Stars Score Section */}
       <View className={styles.scoreWrapper}>
-        <Text className={styles.scoreText}>2</Text>
         <StarGoldIcon width={24} height={24} />
+        <Text className={styles.scoreText}>2</Text>
       </View>
 
       {/* Main Page Header */}
@@ -49,6 +49,7 @@ export default function LetterTitle() {
 
       {/* Back Button Action Link */}
       <View className={styles.backActionWrapper}>
+        <Text className={styles.backText}>رجوع</Text>
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={handlePress}
@@ -56,7 +57,6 @@ export default function LetterTitle() {
         >
           <LeftArrow width={30} height={16} />
         </TouchableOpacity>
-        <Text className={styles.backText}>رجوع</Text>
       </View>
     </View>
   );

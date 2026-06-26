@@ -12,8 +12,9 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import "../global.css";
-import { View } from "react-native";
-
+import { View, I18nManager } from "react-native";
+I18nManager.allowRTL(true);
+I18nManager.forceRTL(true);
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

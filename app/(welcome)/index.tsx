@@ -2,7 +2,7 @@ import { ONBOARDING_DATA } from "../../src/constants/onboarding";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Href, useRouter } from "expo-router";
 import React, { useRef, useState } from "react";
-import { Animated, FlatList, Image, View } from "react-native";
+import { Animated, FlatList, I18nManager, Image, View } from "react-native";
 import OnboardingItem from "../../src/components/onboarding/OnboardingItem";
 export const Images = {
   puzzleYellow: require("../../assets/images/background/puzzle_yellow.png"),
@@ -10,7 +10,7 @@ export const Images = {
 };
 export default function OnboardingScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollX = useRef(new Animated.Value(0)).current;
+  const scrollX = useRef(new Animated.Value(-1)).current;
   const slidesRef = useRef<FlatList>(null);
   const router = useRouter();
 
@@ -34,28 +34,32 @@ export default function OnboardingScreen() {
   return (
     <View className="flex-1 font-almarai">
       <View className="absolute top-0 left-0 z-10">
-        <Image source={Images.puzzleYellow} resizeMode="contain" />
+        <Image source={Images.puzzleBlue} resizeMode="contain" />
       </View>
       <View className="absolute top-0 right-0 z-10">
-        <Image source={Images.puzzleBlue} resizeMode="contain" />
+        <Image source={Images.puzzleYellow} resizeMode="contain" />
       </View>
       <View className="flex-1">
         <FlatList
+          inverted={I18nManager.isRTL}
           data={ONBOARDING_DATA}
-          renderItem={({ item, index }) => (
-            <OnboardingItem
-              item={item}
-              isFirst={index === 0}
-              isLast={index === ONBOARDING_DATA.length - 1}
-              onNext={() =>
-                slidesRef.current?.scrollToIndex({ index: index + 1 })
-              }
-              onPrev={() =>
-                slidesRef.current?.scrollToIndex({ index: index - 1 })
-              }
-              onFinish={handleGetStarted}
-            />
-          )}
+          renderItem={({ item, index }) => {
+            const isRTL = I18nManager.isRTL;
+            return (
+              <OnboardingItem
+                item={item}
+                isFirst={index === 0}
+                isLast={index === ONBOARDING_DATA.length - 1}
+                onNext={() =>
+                  slidesRef.current?.scrollToIndex({ index: index + 1 })
+                }
+                onPrev={() =>
+                  slidesRef.current?.scrollToIndex({ index: index - 1 })
+                }
+                onFinish={handleGetStarted}
+              />
+            );
+          }}
           horizontal
           pagingEnabled
           bounces={false}
@@ -67,6 +71,7 @@ export default function OnboardingScreen() {
           onViewableItemsChanged={viewableItemsChanged}
           viewabilityConfig={viewConfig}
           ref={slidesRef}
+          style={{ direction: "ltr" }}
           showsHorizontalScrollIndicator={false}
         />
       </View>

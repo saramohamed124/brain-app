@@ -37,12 +37,11 @@ const NavButton = ({
     onPress();
   };
   const Icon = direction === "right" ? RightArrow : LeftArrow;
-
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={handlePress}
-      className="w-20 h-16  items-center justify-center"
+      className="h-16 flex items-center justify-center"
     >
       <View className=" mb-2">
         <Icon width={100} height={100} fill={iconColor} />
@@ -75,18 +74,17 @@ const OnboardingItem = ({
         </Text>
       </View>
 
-      <View className="flex-row items-center justify-between w-full  px-10">
-        {!isFirst ? (
-          <NavButton direction="left" type="secondary" onPress={onPrev} />
-        ) : (
-          <View className="w-20" />
-        )}
-
+      <View className="flex-row-reverse items-center gap-24 justify-center w-full p-0 m-0">
         <NavButton
           direction="right"
           type="primary"
           onPress={isLast ? onFinish : onNext}
         />
+        {!isFirst ? (
+          <NavButton direction="left" type="secondary" onPress={onPrev} />
+        ) : (
+          <View className="hidden" />
+        )}
       </View>
     </View>
   );
