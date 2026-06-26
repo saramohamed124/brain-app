@@ -1,9 +1,8 @@
-import { IconSymbol } from "@/src/components/ui/icon-symbol";
+// import { IconSymbol } from "@/src/components/ui/icon-symbol";
 import { useLocalSearchParams } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function GameScreen() {
-  // بنجيب الـ id اللي هو رقم المستوى من الـ URL
   const { id } = useLocalSearchParams();
 
   return (
@@ -12,7 +11,7 @@ export default function GameScreen() {
       <View className="flex-row justify-between w-full px-6 items-center">
         <Text className="text-white text-2xl font-bold">لغز رقم {id}</Text>
         <View className="flex-row items-center bg-white/20 px-3 py-1 rounded-full">
-          <IconSymbol name="dollarsign.circle.fill" size={20} color="#fbbf24" />
+          {/* <IconSymbol name="dollarsign.circle.fill" size={20} color="#fbbf24" /> */}
           <Text className="text-white font-bold ml-1">50</Text>
         </View>
       </View>
@@ -23,7 +22,7 @@ export default function GameScreen() {
           صورة اللغز ستظهر هنا...
         </Text>
         <View className="w-64 h-64 bg-white/10 rounded-3xl border-2 border-dashed border-white/30 items-center justify-center">
-          <IconSymbol name="lightbulb.fill" size={50} color="white" />
+          {/* <IconSymbol name="lightbulb.fill" size={50} color="white" /> */}
         </View>
       </View>
 

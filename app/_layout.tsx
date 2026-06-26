@@ -1,4 +1,4 @@
-import { store } from "@/src/store";
+import { store } from "../src/store";
 import {
   Almarai_300Light,
   Almarai_400Regular,
@@ -12,12 +12,13 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import "../global.css";
-import { View } from "react-native";
-
+import { View, I18nManager } from "react-native";
+I18nManager.allowRTL(true);
+I18nManager.forceRTL(true);
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [isFirstTime, setIsFirstTime] = useState<boolean | null>(null);
+  const [isFirstTime, setIsFirstTime] = useState<boolean | null>(true);
   const [loaded, error] = useFonts({
     AlmaraiLight: Almarai_300Light,
     AlmaraiRegular: Almarai_400Regular,
